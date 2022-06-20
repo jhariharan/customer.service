@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.carlease.customer.service.VO.ResponseTemplateVO;
 import com.carlease.customer.service.entity.Customer;
 import com.carlease.customer.service.service.CustomerService;
 import com.sun.istack.internal.NotNull;
@@ -26,10 +25,21 @@ public class CustomerController {
   @Autowired
   private CustomerService customerService;
 
+  /**
+   * GET end point which gets list of all customers
+   * @return List
+   */
+
+
   @GetMapping("/")
   public List<Customer> getAllCustomers() {
     return customerService.findAllCustomers();
   }
+
+  /**
+   * POST end point which adds a new customer
+   * @return List
+   */
 
   @PostMapping("/")
   public Customer saveCustomer(@Valid @NotNull @RequestBody Customer customer) {
@@ -37,13 +47,15 @@ public class CustomerController {
     return customerService.saveCustomer(customer);
   }
 
+  /**
+   * GET end point which gets a customer based on id
+   * @return List
+   */
+
   @GetMapping("/{id}")
   public Customer findCustomerById(@PathVariable("id") Long customerId) {
     log.info("Inside findCustomerById method of CustomerController");
     return customerService.findCustomerById(customerId);
   }
 
-  public ResponseTemplateVO getCustomerWithCarData(Long customerId) {
-    return customerService.getCustomerWithCarDetails(customerId);
-  }
 }

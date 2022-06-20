@@ -13,7 +13,7 @@ public class CustomerServiceApplication {
 	}
 
 	@Bean
-	private RestTemplate restTemplate(){
+	public RestTemplate restTemplate(){
 		return new RestTemplate();
 	}
 }

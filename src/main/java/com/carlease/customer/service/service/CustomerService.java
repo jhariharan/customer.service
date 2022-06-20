@@ -31,13 +31,5 @@ public class CustomerService {
   public List<Customer> findAllCustomers() {
     return customerRepository.findAll();
   }
-
-  public ResponseTemplateVO getCustomerWithCarDetails(final Long customerId) {
-    ResponseTemplateVO responseTemplateVO = new ResponseTemplateVO();
-    Customer customer = findCustomerById(customerId);
-    Car car = restTemplate.getForObject("http://localhost:9002/api/v1/cars/" + customer.getCarId(), Car.class);
-    responseTemplateVO.setCar(car);
-    responseTemplateVO.setCustomer(customer);
-    return responseTemplateVO;
-  }
 }
+

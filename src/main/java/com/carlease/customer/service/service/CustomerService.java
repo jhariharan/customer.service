@@ -17,9 +17,6 @@ public class CustomerService {
   @Autowired
   private CustomerRepository customerRepository;
 
-  @Autowired
-  private RestTemplate restTemplate;
-
   public Customer saveCustomer(final Customer customer) {
     return customerRepository.save(customer);
   }

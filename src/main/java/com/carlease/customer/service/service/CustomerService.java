@@ -4,10 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import com.carlease.customer.service.VO.Car;
-import com.carlease.customer.service.VO.ResponseTemplateVO;
 import com.carlease.customer.service.entity.Customer;
 import com.carlease.customer.service.repository.CustomerRepository;
 
